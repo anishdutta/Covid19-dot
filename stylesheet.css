@@ -228,12 +228,17 @@ footer{
   }
   #lineChart{
     width: 500px !important;
+    height: 300px !important;
   }
   #lineChart1{
     width: 500px !important;
+    height: 300px !important;
+
   }
   #lineChart2{
     width: 500px !important;
+    height: 300px !important;
+
   }
   .bars1{
     margin-bottom: 50px;
