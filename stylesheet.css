@@ -219,7 +219,9 @@ footer{
 }
 @media(min-width: 400px){
   .case-card{
-    margin-left: 60px;
+    margin-left: -40px;
+    margin-top: 70px;
+    margin-bottom: 30px;
   }
   .bars{
     margin-top: 50px;
@@ -253,6 +255,15 @@ footer{
 
     
   }
+  .no3{
+    margin-left: 10px;
+  }
+  .navbar-brand{
+    color: #3b3863 !important;
+    font-size: 50px;
+    font-weight: bolder;
+  }
+  
 }
 @media(min-width: 1100px){
    .case-card{
@@ -270,9 +281,17 @@ footer{
     margin-left: 780px;
     margin-top: 50px;
   }
+  .cont{
+    width: 550px;
+  }
+  .navbar-brand{
+    color: #3b3863 !important;
+    font-size: 30px;
+    font-weight: bolder;
+  }
 }
 .cont{
-  max-width: 550px;
+
   margin-top: 100px;
   padding-left: 0px;
   
@@ -290,11 +309,7 @@ footer{
   font-size: 25px;
   margin-left: 40px;
 }
-.navbar-brand{
-  color: #3b3863 !important;
-  font-size: 30px;
-  font-weight: bolder;
-}
+
 .cases{
   margin-left: 30px;
   margin-top: 30px;
@@ -361,4 +376,7 @@ h1{
 }
 .demo{
   color: white !important;
+}
+.menu{
+  font-size: 30px;
 }
