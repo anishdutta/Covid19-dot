@@ -301,6 +301,9 @@ footer{
 
   
 }
+.navbar-brand{
+  margin-left: 20px;
+}
 .cont{
   color:  rgb(36, 72, 104);
 }
