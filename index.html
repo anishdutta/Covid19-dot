@@ -1,37 +1,4 @@
-<?php
 
-
-$curl = curl_init();
-
-curl_setopt_array($curl, array(
-	CURLOPT_URL => "https://covid-19-data.p.rapidapi.com/country?format=json&name=India",
-	CURLOPT_RETURNTRANSFER => true,
-	CURLOPT_FOLLOWLOCATION => true,
-	CURLOPT_ENCODING => "",
-	CURLOPT_MAXREDIRS => 10,
-	CURLOPT_TIMEOUT => 30,
-	CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
-	CURLOPT_CUSTOMREQUEST => "GET",
-	CURLOPT_HTTPHEADER => array(
-		"x-rapidapi-host: covid-19-data.p.rapidapi.com",
-		"x-rapidapi-key: b8e5a7dff6msh69a6a04b57078acp103ea7jsn08542aacf5ec"
-	),
-));
-
-$response = curl_exec($curl);
-$err = curl_error($curl);
-
-curl_close($curl);
-
-if ($err) {
-	echo "cURL Error #:" . $err;
-} else {
-	echo $response;
-}
-$confirmed = "$response['confirmed'];"
-echo $confirmed;
-
-?>
 <!doctype html>
 <html lang="en">
 
@@ -64,23 +31,39 @@ echo $confirmed;
           </ul>
         </div>
       </nav>
-      <div class="container">
-        <div class=" case-card">
+      <div class="container whole-body">
+        <div class="login">
+          <button class="btn btn-primary">Sign in</button>
+          <div class="dropdown">
+            <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              Select
+            </button>
+            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+              <a class="dropdown-item" href="#">Govt Hospital</a>
+              <a class="dropdown-item" href="#">Hospital</a>
+            </div>
+          </div>
+          <input class="form-control" placeholder="Username">
+          <input class="form-control" placeholder="Password">
+          <button class="btn btn-primary">Submit</button><br>
+          <small>Help & Support/ Forget Password</small>
+        </div>
+   
+    <div class=" cont">
+      <div class=" case-card">
         <div class= " card cases">
-            <h1>Total Cases</h1>
-            <h2 class="golden">1001</h2>
+            <h4>Total Cases</h4>
+            <h5 class="golden">1001</h5>
         </div>
         <div class= " card cases">
-            <h1>Total Saved</h1>
-            <h2 class="green">101</h2>
+            <h4>Total Saved</h4>
+            <h5 class="green">101</h5>
         </div>
-        <div class= " card cases no3">
-            <h1>Total Death</h1>
-            <h2 class="red">20</h2>
+        <div class= " card cases ">
+            <h4>Total Death</h4>
+            <h5 class="red">20</h5>
         </div>
     </div>
-   
-    <div class="container cont">
         <div class="color-indicator">
          1 <img src="icon/map color indicator.png" width="150px" height="20px" class="indicator">98
         </div>
@@ -3414,6 +3397,9 @@ echo $confirmed;
       d="M 830.61093,617.25389 C 828.06361,615.44565 821.13328,611.66873 820.3626,611.66873 C 819.89212,611.66873 819.73446,611.41981 819.49363,610.29684 C 819.08973,608.41353 819.07542,608.45374 820.2183,608.26188 C 820.77869,608.1678 821.63455,607.96938 822.12022,607.82094 C 822.99984,607.55209 823.00325,607.54412 823.00325,605.76038 C 823.00325,604.77552 822.86951,603.2017 822.70604,602.26302 C 822.42358,600.64101 822.44718,600.47544 823.18152,598.92605 C 823.6065,598.02939 824.10967,597.28963 824.29966,597.28212 C 824.48967,597.27463 825.1197,596.95442 825.69973,596.57057 C 826.27977,596.18672 827.33585,595.69766 828.04656,595.48376 C 830.66318,594.69628 832.14941,595.10645 834.33771,597.22002 C 834.90683,597.76971 835.89928,598.69091 836.54315,599.26715 C 837.69046,600.29395 837.70259,600.32271 837.1511,600.70899 C 836.70475,601.02163 836.58839,601.395 836.58839,602.51464 C 836.58839,603.90688 836.6048,603.93484 837.79136,604.56431 C 838.453,604.91531 839.64327,605.75641 840.43643,606.43344 C 841.22959,607.11045 842.18601,607.85404 842.56181,608.08583 C 843.7329,608.80815 844.73947,609.84824 844.73947,610.33604 C 844.73947,610.5932 844.38027,611.02882 843.94124,611.30409 C 843.50222,611.57936 842.37125,612.49384 841.42799,613.33628 C 840.0457,614.57082 839.37034,614.96064 837.9469,615.34562 C 835.76157,615.93667 834.68296,616.56402 833.75071,617.78626 C 833.35355,618.30697 832.94312,618.72567 832.83865,618.71672 C 832.73418,618.70778 831.7317,618.0495 830.61093,617.2539 L 830.61093,617.25389 z"
       </path>
     </svg>
+    
+    </div>
+      
     </div>
     
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
@@ -3441,140 +3427,13 @@ echo $confirmed;
     <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.53/vfs_fonts.js"></script>
     
     <script src="https://cdn.datatables.net/buttons/1.6.1/js/buttons.html5.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/1.5.10/clipboard.min.js"></script>apur</district>
-    <div class="slidecontainer">
-        <input type="range" min="1" max="31" value="100" class="slider" id="myRange">
-        <p class="demo">Date: <span id="demo"></span>/3/2020</p>
-      </div>
-      <script>
-        var slider = document.getElementById("myRange");
-          var output = document.getElementById("demo");
-          output.innerHTML = slider.value; 
-          slider.oninput = function() {
-          output.innerHTML = this.value;
-          }
-    </script>
-      
-    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/1.5.10/clipboard.min.js"></script></district>
     
-    </head>
-    <div class="col-md-6 bars">
-
-        <canvas id="lineChart"></canvas>
-      
-      </div>
-      <script>
-          var ctxL = document.getElementById("lineChart").getContext('2d');var ctxL = document.getElementById("lineChart").getContext('2d');
-          var gradientFill = ctxL.createLinearGradient(0, 0, 0, 290);
-          gradientFill.addColorStop(0, "rgba(173, 53, 186, 1)");
-            gradientFill.addColorStop(1, "rgba(173, 53, 186, 0.1)");
-
-          var myLineChart = new Chart(ctxL, {
-            type: 'line',
-            data: {
-            labels: ["01 march", "07 march", "14 March", "19 march", " 22 march", "25 march", "31 march"],
-            datasets: [
-            {
-                label: "Total affected Cases",
-                data: [0, 65, 45, 65, 35, 65, 0],
-                backgroundColor: gradientFill,
-                borderColor: [
-                '#AD35BA',
-                ],
-                borderWidth: 2,
-                pointBorderColor: "#fff",
-                pointBackgroundColor: "blue",
-            }
-                    ]
-                },
-            options: {
-            responsive: true
-                }
-            });
-      </script>
-
-<div class="col-md-6 bars1">
-
-    <canvas id="lineChart1"></canvas>
-  
-  </div>
-  <script>
-      var ctxL = document.getElementById("lineChart1").getContext('2d');var ctxL = document.getElementById("lineChart1").getContext('2d');
-      var gradientFill = ctxL.createLinearGradient(0, 0, 0, 290);
-      gradientFill.addColorStop(0, "rgba(173, 53, 186, 1)");
-        gradientFill.addColorStop(1, "rgba(173, 53, 186, 0.1)");
-
-      var myLineChart = new Chart(ctxL, {
-        type: 'line',
-        data: {
-        labels: ["01 march", "07 march", "14 March", "19 march", " 22 march", "25 march", "31 march"],
-        datasets: [
-        {
-            label: "Total Cases",
-            data: [1, 15, 25, 55, 85, 105, 150],
-            backgroundColor: gradientFill,
-            borderColor: [
-            '#AD35BA',
-            ],
-            borderWidth: 2,
-            pointBorderColor: "white",
-            pointBackgroundColor: "red",
-        }
-                ]
-            },
-        options: {
-        responsive: true
-            }
-        });
-  </script>
-
-<div class="col-md-6 bars2">
-
-    <canvas id="lineChart2"></canvas>
-  
-  </div>
-  <script>
-      var ctxL = document.getElementById("lineChart2").getContext('2d');var ctxL = document.getElementById("lineChart2").getContext('2d');
-      var gradientFill = ctxL.createLinearGradient(0, 0, 0, 290);
-      gradientFill.addColorStop(0, "rgba(173, 53, 186, 1)");
-        gradientFill.addColorStop(1, "rgba(173, 53, 186, 0.1)");
-
-      var myLineChart = new Chart(ctxL, {
-        type: 'bar',
-        data: {
-        labels: ["Rajasthan", "Kerela", "UP", "Karnataka", "Delhi", "Tamil Nadu", "Maharastra"],
-        datasets: [
-        {
-            label: "Total affected Cases",
-            data: [120, 220, 90, 150, 100, 55, 250],
-            backgroundColor: gradientFill,
-            borderColor: [
-            '#AD35BA',
-            ],
-            borderWidth: 2,
-            pointBorderColor: "#fff",
-            pointBackgroundColor: "blue",
-        }
-                ]
-            },
-        options: {
-        responsive: true
-            }
-        });
-  </script>
     
  
     
 </body>
-<!-- The core Firebase JS SDK is always required and must be listed first -->
-<script src="/__/firebase/7.14.1/firebase-app.js"></script>
 
-<!-- TODO: Add SDKs for Firebase products that you want to use
-     https://firebase.google.com/docs/web/setup#available-libraries -->
-<script src="/__/firebase/7.14.1/firebase-analytics.js"></script>
-
-<!-- Initialize Firebase -->
-<script src="/__/firebase/init.js"></script>
    
 
 </html>
